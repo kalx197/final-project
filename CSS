@@ -1,0 +1,72 @@
+/* --- Variables & Reset --- */
+:root {
+    --primary: #3498db;
+    --dark: #2c3e50;
+    --light: #f4f4f4;
+    --text: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* The Box Model requirement */
+}
+
+body {
+    font-family: 'Inter', system-ui, sans-serif;
+    color: var(--text);
+    transition: 0.3s ease;
+}
+
+/* --- Dark Mode State --- */
+body.dark-theme {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+/* --- Navigation (Flexbox) --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 10%;
+    background: var(--dark);
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a { color: white; text-decoration: none; }
+.nav-links a.active { color: var(--primary); font-weight: bold; }
+
+/* --- Hero & Grid (CSS Grid) --- */
+.hero {
+    text-align: center;
+    padding: 5rem 10%;
+    background: var(--light);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 4rem 10%;
+}
+
+.skill-card {
+    border: 1px solid #ddd;
+    padding: 2rem;
+    border-radius: 8px;
+    transition: transform 0.2s;
+}
+
+.skill-card:hover { transform: translateY(-5px); }
+
+/* --- Responsiveness --- */
+@media (max-width: 768px) {
+    .navbar { flex-direction: column; gap: 1rem; }
+}
